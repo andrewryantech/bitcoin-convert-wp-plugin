@@ -241,13 +241,7 @@ class BC_Controller
 	 */
 	protected function enqueue_font_awesome_style()
 	{
-		$found = false;
-		foreach(wp_styles()->registered as $style){
-			if(false !== strpos($style->src, 'maxcdn.bootstrapcdn.com/font-awesome')){
-				$found = true;
-			}
-		}
-		if(!$found){
+		if(!in_array(self::STYLE_FONT_AWESOME, wp_styles()->queue)){
 			wp_enqueue_style(self::STYLE_FONT_AWESOME, self::FONT_AWESOME_URL, [], self::VERSION);
 		}
 	}
