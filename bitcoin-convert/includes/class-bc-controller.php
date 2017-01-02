@@ -120,7 +120,7 @@ class BC_Controller
 	 */
 	public function convert_bitcoin(array $atts, string $content, string $tag)
 	{
-		$quantity     = floatval($content);
+		$value        = floatval($content);
 		$fromFiat     = isset($atts['from']) ? $atts['from'] : null;
 		$toFiat       = isset($atts['to']) ? $atts['to'] : null;
 		$prefixSymbol = !isset($atts['symbol']) || $atts['symbol'] == 'true';
@@ -140,16 +140,36 @@ class BC_Controller
 			return '';
 		}
 
-		// TODO add some filter hooks some 3rd-party theme/plugin authors can render how they like, eg '<td>$</td><td>100</td>' or '<span>$ 100</span>'
 		if($fromFiat){
 			$symbol = self::BITCOIN_ICON;
-			$quantum = $this->getExchange()->convertToBitcoin($quantity, $fromFiat);
+			$value = $this->getExchange()->convertToBitcoin($value, $fromFiat);
 		} else {
 			$symbol = $this->getExchange()->getSymbol($toFiat);
-			$quantum = $this->getExchange()->convertToFiat($quantity, $toFiat);
+			$value = $this->getExchange()->convertToFiat($value, $toFiat);
 		}
 
-		return sprintf("%s%.{$decimals}f", ($prefixSymbol ? "$symbol " : ''), $quantum);
+		$defaults = [
+			'beforeSymbol' => '<span class="bc-symbol">',
+			'afterSymbol'  => "</span>",
+			'beforeValue'  => '<span class="bc-value">',
+			'afterValue'   => "</span>",
+			'prefixSymbol' => $prefixSymbol,
+			'symbol'       => $symbol,
+			'value'        => $value,
+		];
+
+		$data = apply_filters('format_bitcoin_convert_output', $defaults);
+
+		$formatSymbol = $data['prefixSymbol']
+			? "{$data['beforeSymbol']}%s{$data['afterSymbol']} "
+			: '';
+
+		$formatValue = "{$data['beforeValue']}%.{$decimals}f{$data['afterValue']}";
+
+		$args = $prefixSymbol ? [$symbol] : [];
+		$args[] = $value;
+
+		return vsprintf("$formatSymbol$formatValue", $args);
 	}
 
 	/**
