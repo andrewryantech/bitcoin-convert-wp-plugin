@@ -3,3 +3,6 @@
 !CHANGELOG.md
 !README.md
 !real-time-bitcoin-currency-converter
+!real-time-bitcoin-currency-converter-svn
+real-time-bitcoin-currency-converter-svn/*
+!real-time-bitcoin-currency-converter-svn/assets
