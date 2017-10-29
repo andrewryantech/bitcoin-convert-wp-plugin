@@ -161,7 +161,7 @@ class BC_Controller
 		$data = apply_filters('format_bitcoin_convert_output', $defaults);
 
 		$formatSymbol = $data['prefixSymbol']
-			? "{$data['beforeSymbol']}%s{$data['afterSymbol']} "
+			? "{$data['beforeSymbol']}%s{$data['afterSymbol']}"
 			: '';
 
 		$formatValue = "{$data['beforeValue']}%.{$decimals}f{$data['afterValue']}";
@@ -221,7 +221,26 @@ class BC_Controller
 	{
 		add_action('init', [$this, 'enqueue_public_styles' ]);
 		add_shortcode( 'convert_bitcoin', [$this, 'convert_bitcoin'] );
+		add_action('wp_head', [$this, 'embed_styles']);
 	}
+
+
+    /**
+     * Trivial CSS.
+     *
+     * @todo move to external style-sheet
+     */
+    public function embed_styles()
+    {
+        ?>
+      <!--suppress CssUnusedSymbol -->
+      <style>
+        .bc-symbol .fa {
+          width: auto;
+        }
+      </style>
+        <?php
+    }
 
 	/**
 	 * Public pages only
