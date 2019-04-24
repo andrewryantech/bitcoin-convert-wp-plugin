@@ -31,14 +31,14 @@ class BC_ExchangeRates
 	const TWD = 'TWD';
 
 	/**
-	 * @var stdClass Indexed by fiat currency code
+	 * @var array Indexed by fiat currency code
 	 */
 	private $exchange_rates;
 
 	/**
-	 * @param stdClass $exchange_rates
+	 * @param array $exchange_rates
 	 */
-	public function __construct(stdClass $exchange_rates) {
+	public function __construct(array $exchange_rates) {
 		$this->exchange_rates = $exchange_rates;
 	}
 
@@ -71,7 +71,7 @@ class BC_ExchangeRates
 	 */
 	public function get15m(string $fiatCode){
 		$this->checkFiatCode($fiatCode);
-		return $this->exchange_rates->{$fiatCode}->{'15m'};
+		return $this->exchange_rates[$fiatCode]['15m'];
 	}
 
 	/**
@@ -81,7 +81,7 @@ class BC_ExchangeRates
 	 */
 	public function getLast(string $fiatCode){
 		$this->checkFiatCode($fiatCode);
-		return $this->exchange_rates->{$fiatCode}->last;
+		return $this->exchange_rates[$fiatCode]['last'];
 	}
 
 	/**
@@ -91,7 +91,7 @@ class BC_ExchangeRates
 	 */
 	public function getBuy(string $fiatCode){
 		$this->checkFiatCode($fiatCode);
-		return $this->exchange_rates->{$fiatCode}->buy;
+		return $this->exchange_rates[$fiatCode]['buy'];
 	}
 
 	/**
@@ -101,7 +101,7 @@ class BC_ExchangeRates
 	 */
 	public function getSell(string $fiatCode){
 		$this->checkFiatCode($fiatCode);
-		return $this->exchange_rates->{$fiatCode}->sell;
+		return $this->exchange_rates[$fiatCode]['sell'];
 	}
 
 	/**
@@ -111,7 +111,7 @@ class BC_ExchangeRates
 	 */
 	public function getSymbol(string $fiatCode){
 		$this->checkFiatCode($fiatCode);
-		return $this->exchange_rates->{$fiatCode}->symbol;
+		return $this->exchange_rates[$fiatCode]['symbol'];
 	}
 
 	/**
@@ -119,7 +119,7 @@ class BC_ExchangeRates
 	 * @param string $fiatCode
 	 */
 	protected function checkFiatCode(string $fiatCode){
-		if(!property_exists($this->exchange_rates, $fiatCode)){
+		if(!array_key_exists($fiatCode, $this->exchange_rates)){
 			trigger_error( __( "Unknown Fiat Currency code: $fiatCode"), E_USER_WARNING);
 		}
 	}

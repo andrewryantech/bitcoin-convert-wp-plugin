@@ -89,9 +89,9 @@ class BC_Controller
 		add_filter('http_request_args', [$this, 'modify_user_agent']);
 
 		// Perform the API call
-		$exchange_rates = json_decode( wp_remote_retrieve_body( wp_remote_get(self::EXCHANGE_RATE_API) ) );
+		$exchange_rates = json_decode( wp_remote_retrieve_body( wp_remote_get(self::EXCHANGE_RATE_API) ), true );
 
-		if(!$exchange_rates instanceof stdClass || !count($exchange_rates)){
+		if(!is_array($exchange_rates) || !count($exchange_rates)){
 			trigger_error( __( "Unable to retrieve Bitcoin exchange rates from '" . self::EXCHANGE_RATE_API . "'" ), E_USER_WARNING);
 			return;
 		}
