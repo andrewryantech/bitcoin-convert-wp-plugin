@@ -5,7 +5,7 @@ Tags: bitcoin
 Requires at least: 4.6
 Tested up to: 5.1
 Requires PHP: 7.0
-Stable tag: 1.0.6
+Stable tag: 1.0.7
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -69,8 +69,11 @@ function my_custom_filter_function(array $output){
 
 == Changelog ==
 
+= 1.0.7 =
+* Add composer dump and svn cp to publish script
+
 = 1.0.6 =
-Uncomment svn ci command
+* Uncomment svn ci command
 
 = 1.0.5 =
 * Clean up dead code
