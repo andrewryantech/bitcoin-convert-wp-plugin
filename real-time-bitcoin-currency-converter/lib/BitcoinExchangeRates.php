@@ -15,7 +15,7 @@ namespace Rtbcc;
 class BitcoinExchangeRates
 {
 
-    // Currencies. Must match JSON keys returned from GET BC_Controller::EXCHANGE_RATE_API
+    // Currencies. Must match JSON keys returned from the API
     const USD = 'USD';
     const JPY = 'JPY';
     const CNY = 'CNY';

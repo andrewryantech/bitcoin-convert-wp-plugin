@@ -27,12 +27,12 @@
  */
 declare(strict_types=1);
 
-use Rtbcc\Controller;
+use Rtbcc\Plugin;
 
 defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
 
 require_once __DIR__ . '/vendor/autoload.php';
 
-(new Controller())->run();
+(new Plugin())->run();
 
 

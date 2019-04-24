@@ -10,11 +10,11 @@ namespace Rtbcc;
 use function in_array;
 
 /**
- * The main plugin controller
+ * The main plugin
  *
  * @since 1.0.0
  */
-class Controller
+class Plugin
 {
 
     const VERSION            = '1.0.4';
