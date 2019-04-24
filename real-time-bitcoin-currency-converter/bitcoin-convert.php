@@ -27,7 +27,7 @@
  */
 defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
 
-require_once( dirname( __FILE__ ) . '/includes/class-bc-exchange-rates.php' );
-require_once( dirname( __FILE__ ) . '/includes/class-bc-controller.php' );
+require_once __DIR__ . '/includes/class-bc-exchange-rates.php';
+require_once __DIR__ . '/includes/class-bc-controller.php';
 
 
