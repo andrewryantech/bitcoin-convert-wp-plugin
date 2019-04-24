@@ -1,6 +1,7 @@
 /*
 !/.gitignore
 !/composer.json
+!/publish.sh
 !/README.md
 !/real-time-bitcoin-currency-converter
 /real-time-bitcoin-currency-converter/vendor/
