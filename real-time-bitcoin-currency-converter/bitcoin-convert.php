@@ -8,7 +8,7 @@
  * Plugin Name: Real-time Bitcoin Converter
  * Plugin URI:  https://github.com/andrewryantech/bitcoin-converter
  * Description: Convert any quantity of any currency to BitCoin in real-time.
- * Version:     1.0.2
+ * Version:     1.0.3
  * Author:      Andrew Ryan
  * Author URI:  https://github.com/andrewryantech
  * License:     GPL-2.0+
