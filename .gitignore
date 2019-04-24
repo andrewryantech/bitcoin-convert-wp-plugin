@@ -1,8 +1,10 @@
 /*
-!.gitignore
-!CHANGELOG.md
-!README.md
-!real-time-bitcoin-currency-converter
-!real-time-bitcoin-currency-converter-svn
-real-time-bitcoin-currency-converter-svn/*
-!real-time-bitcoin-currency-converter-svn/assets
+!/.gitignore
+!/composer.json
+!/README.md
+!/real-time-bitcoin-currency-converter
+real-time-bitcoin-currency-converter/autoload.php
+/real-time-bitcoin-currency-converter/vendor/
+!/real-time-bitcoin-currency-converter-svn
+/real-time-bitcoin-currency-converter-svn/*
+!/real-time-bitcoin-currency-converter-svn/assets

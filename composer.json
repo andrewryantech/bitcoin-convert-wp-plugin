@@ -1,0 +1,19 @@
+{
+  "name": "mws/real-time-bitcoin-currency-converter",
+  "description": "Wordpress plugin to convert between Bitcoin and Fiat currencies",
+  "autoload": {
+    "psr-4": {
+      "Rtbcc\\": "real-time-bitcoin-currency-converter/lib/"
+    }
+  },
+  "authors": [
+    {
+      "name": "AndyRyan",
+      "email": "andy@modernwebservices.com.au"
+    }
+  ],
+  "config": {
+    "vendor-dir": "real-time-bitcoin-currency-converter/vendor"
+  },
+  "require": {}
+}

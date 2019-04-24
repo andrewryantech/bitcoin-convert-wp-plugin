@@ -8,7 +8,7 @@
  * Plugin Name: Real-time Bitcoin Converter
  * Plugin URI:  https://github.com/andrewryantech/bitcoin-converter
  * Description: Convert any quantity of any currency to BitCoin in real-time.
- * Version:     1.0.3
+ * Version:     1.0.4
  * Author:      Andrew Ryan
  * Author URI:  https://github.com/andrewryantech
  * License:     GPL-2.0+
@@ -25,9 +25,14 @@
  * Even though we may just need, eg USD -> BC rate, we get ALL rates as the cost of two calls, each for one currency, is far
  * more than the overhead of a single call for all currencies.
  */
+declare(strict_types=1);
+
+use Rtbcc\Controller;
+
 defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
 
-require_once __DIR__ . '/includes/class-bc-exchange-rates.php';
-require_once __DIR__ . '/includes/class-bc-controller.php';
+require_once __DIR__ . '/vendor/autoload.php';
+
+(new Controller())->run();
 
 

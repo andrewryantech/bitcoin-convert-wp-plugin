@@ -15,7 +15,6 @@
          * @param {string} url Absolute URL to where the plugin is located.
          */
         init : function(editor, url) {
-
             editor.addButton('bitcoin_convert', {
                 title : 'Add Bitcoin Conversion shortcode',
 
@@ -82,7 +81,7 @@
                 author:    'Andrew Ryan',
                 authorurl: 'https://github.com/andrewryantech',
                 infourl:   'https://github.com/andrewryantech/bitcoin-convert-wp-plugin',
-                version:   "1.0.0"
+                version:   "1.0.4"
             };
         }
     });
