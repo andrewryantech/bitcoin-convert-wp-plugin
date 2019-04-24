@@ -55,6 +55,7 @@ git push origin HEAD
 git push origin --tags
 
 # Copy files to svn trunk
+# @see https://developer.wordpress.org/plugins/wordpress-org/how-to-use-subversion/
 echo "Copying files to svn trunk"
 rm -rf real-time-bitcoin-currency-converter-svn/trunk/*
 cp -r real-time-bitcoin-currency-converter/* real-time-bitcoin-currency-converter-svn/trunk

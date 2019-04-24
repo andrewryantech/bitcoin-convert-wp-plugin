@@ -6,6 +6,3 @@ The usual. See https://codex.wordpress.org/Managing_Plugins if you require assis
 
 ## Contributing
 Feel free to fork this project and contribute. I try to action pull requests within 24 - 48 hours.
-
-## SVN publishing
-- As per https://developer.wordpress.org/plugins/wordpress-org/how-to-use-subversion/
