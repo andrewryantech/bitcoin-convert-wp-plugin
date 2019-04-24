@@ -6,6 +6,10 @@
 # CD to this file's directory
 cd $( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 
+# Generate optimised composer files
+echo "Generating latest composer files"
+composer dump-autoload --classmap-authoritative -vvv
+
 # Derive previous tag
 prevTag=`git tag | sort -V | egrep "^[0-9]" | tail -n1`
 echo "Previous tag: '$prevTag'"
@@ -50,18 +54,15 @@ git tag ${tag}
 git push origin HEAD
 git push origin --tags
 
-# Copy files to svn trunk and tag directories
-echo "Copying files to svn trunk and $tag tag directories"
+# Copy files to svn trunk
+echo "Copying files to svn trunk"
 rm -rf real-time-bitcoin-currency-converter-svn/trunk/*
 cp -r real-time-bitcoin-currency-converter/* real-time-bitcoin-currency-converter-svn/trunk
-mkdir "real-time-bitcoin-currency-converter-svn/tags/$tag"
-cp -r real-time-bitcoin-currency-converter/* "real-time-bitcoin-currency-converter-svn/tags/$tag"
 
 # Add new files to svn
 cd real-time-bitcoin-currency-converter-svn
 svn add trunk/*
-svn add ${tag}
-svn add ${tag}/*
+svn cp trunk "tags/$tag"
 
 # Check in svn changes with appropriate message
-svn ci -m "Release $tag"
+svn ci -m "Tagging version $tag"
