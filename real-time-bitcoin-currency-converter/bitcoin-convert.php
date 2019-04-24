@@ -6,7 +6,7 @@
  *
  * @wordpress-plugin
  * Plugin Name: Real-time Bitcoin Converter
- * Plugin URI:  https://github.com/andrewryantech/bitcoin-converter
+ * Plugin URI:  https://github.com/andrewryantech/bitcoin-convert-wp-plugin
  * Description: Convert any quantity of any currency to BitCoin in real-time.
  * Version:     1.0.4
  * Author:      Andrew Ryan
