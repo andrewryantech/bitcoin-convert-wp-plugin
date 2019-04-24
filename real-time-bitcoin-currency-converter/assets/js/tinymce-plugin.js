@@ -81,7 +81,7 @@
                 author:    'Andrew Ryan',
                 authorurl: 'https://github.com/andrewryantech',
                 infourl:   'https://github.com/andrewryantech/bitcoin-convert-wp-plugin',
-                version:   "1.0.4"
+                version: "1.0.5"
             };
         }
     });
