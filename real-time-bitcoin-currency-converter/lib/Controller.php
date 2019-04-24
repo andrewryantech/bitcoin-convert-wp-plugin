@@ -47,7 +47,6 @@ class Controller
      */
     public function run()
     {
-        $this->register_actions();
         if (is_admin()) {
             $this->register_admin_actions();
         } else {
@@ -114,17 +113,6 @@ class Controller
             return;
         }
         $this->exchange = new BitcoinExchangeRates($exchange_rates);
-    }
-
-
-    /**
-     * Actions used on both admin + public pages
-     *
-     * @since 1.0.0
-     */
-    protected function register_actions()
-    {
-
     }
 
 
