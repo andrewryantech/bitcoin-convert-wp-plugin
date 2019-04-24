@@ -17,7 +17,7 @@ use function in_array;
 class Plugin
 {
 
-    const VERSION = '1.0.5';
+    const VERSION = '1.0.6';
     const EXCHANGE_RATE_API  = 'https://blockchain.info/ticker';
     const FONT_AWESOME_URL   = 'https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css';
     const BITCOIN_ICON       = '<i class="fa fa-btc" aria-hidden="true"></i>';

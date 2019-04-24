@@ -64,4 +64,4 @@ svn add ${tag}
 svn add ${tag}/*
 
 # Check in svn changes with appropriate message
-#svn ci -m "Release $tag"
+svn ci -m "Release $tag"
